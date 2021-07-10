@@ -1,0 +1,35 @@
+﻿@model Laptopseller.Models.Laptop
+
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+
+<div class="card mb-4 rounded-3 shadow-sm border-primary">
+    <div class="card-header py-3 text-white bg-primary border-primary">
+        <h4 class="my-0 fw-normal">Productdetails</h4>
+    </div>
+    <div class="card-body">
+        <h1 class="card-title pricing-card-title">Model:@Html.DisplayFor(model => model.Model)<small class="text-muted fw-light"></small></h1>
+        <img class="bd-placeholder-img card-img-top" width="55%" height="225" src="@Model.Image" />
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>Price:@Html.DisplayFor(model => model.Price)</li>
+            <li>Specifications:@Html.DisplayFor(model => model.specifictaions)</li>
+            <li>Description:@Html.DisplayFor(model => model.Description)</li>
+
+        </ul>
+    </div>
+    <div class="btn-group">
+        <a class="btn btn-sm btn-outline-secondary" style="color:firebrick" asp-controller="Cart" asp-action="Buy" asp-route-id="@Model.LaptopID">Add to cart</a>
+    </div>
+
+</div>
+
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.LaptopID">Edit</a>*@
+    <a asp-action="Index">Back to List</a>
+</div>
